@@ -35,6 +35,22 @@
 
 # PART 3 (1): Using the URLs API
 
+# from django.shortcuts import render, get_object_or_404
+# from .models import Board
+
+
+# def home(request):
+#     boards = Board.objects.all()
+#     return render(request, 'home.html', {'boards': boards})
+
+
+# def board_topics(request, pk):
+#     board = Board.objects.get(pk=pk)
+#     return render(request, 'topics.html', {'board': board})    
+
+
+# PART 3 (2): Forms
+
 from django.shortcuts import render, get_object_or_404
 from .models import Board
 
@@ -46,5 +62,10 @@ def home(request):
 
 def board_topics(request, pk):
     board = Board.objects.get(pk=pk)
-    return render(request, 'topics.html', {'board': board})    
+    return render(request, 'topics.html', {'board': board})  
+
+
+def new_topic(request, pk):
+    board = get_object_or_404(Board, pk=pk)
+    return render(request, 'new_topic.html', {'board': board})     
 

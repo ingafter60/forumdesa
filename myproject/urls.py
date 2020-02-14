@@ -17,5 +17,8 @@ urlpatterns = [
 
     # BORDS
     url(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
+    url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
+
+    # ADMIN
     url(r'^admin/', admin.site.urls),
 ]
