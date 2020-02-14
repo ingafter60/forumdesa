@@ -10,10 +10,12 @@
 from django.conf.urls import url
 from django.contrib import admin
 
+from accounts import views as accounts_views
 from boards import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^signup/$', accounts_views.signup, name='signup'),
 
     # BORDS
     url(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
